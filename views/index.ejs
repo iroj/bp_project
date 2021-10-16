@@ -14,7 +14,76 @@
 </head>
 
 <body>
-  <h1>Have fun! 🥔</h1>
+  <!-- <h1>Have fun! 🥔</h1> -->
+  <!-- Madeline -->
+  <nav >
+    <span class="twitterLogo"> </span>
+    <div class="arrow">
+      <span><strong>Write</strong> a new tweet</span>
+    <i class="fas fa-angle-double-down"></i>
+  </div>
+  </nav>
+
+  <!-- Page-specific (main) content here -->
+  <main class="container">
+      <!-- <h2> What are you humming about?</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p> -->
+
+    <section class="new-tweet">
+      <!-- <h2>Compose Tweet</h2> -->
+      <!-- <form method="POST", action="/tweets/"> -->
+        <span id="charOverLimit">Oops! You've typed more than 140 characters!</span>
+        <span id="emptyTweet">Oops! It's an empty tweet!</span>
+      <form id="new-tweet-form">
+        <label for="tweet-text">What are you humming about?</label>
+        <textarea name="text" id="tweet-text" ></textarea>
+        <div class="justTwitIt">
+          <button type="submit">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </div>
+      </form>
+
+    <section class="tweetContainer">
+
+      <article class="old-Tweet">
+        <header>
+          <div class="image">
+            <img>
+            <span > </span>
+          </div>
+          <div class="name" >
+            <span><strong></strong></span>
+
+          </div>
+
+        </header>
+
+        <div class= "tweet">
+          <p></p>
+           </div>
+
+           <footer>
+            <span></span>
+
+            <div class="tweeticon">
+              <i class="fas fa-flag"></i>
+              <i class="fas fa-retweet"></i>
+              <i class="fas fa-heart"></i>
+            </div>
+
+           </footer>
+
+      </article>
+    </section>
+
+  </main>
+
+  <section>
+    <!-- Raman -->
+    admin page
+  </section>
+
+</div>
 </body>
 
 </html>
