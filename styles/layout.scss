@@ -4,3 +4,20 @@ body,
 html {
   margin: 0;
 }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  width: 100vw;
+  background-color: #FCD66B;
+  padding: 0 1.5em;
+  // z-index: 1;
+  position:fixed;
+  top:0;
+}
+
+#login {
+  cursor: pointer;
+}
