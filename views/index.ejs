@@ -7,7 +7,14 @@
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
   <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
   <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/styles.css" type="text/css" />
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+
+  <!-- Bootstrap for css - start -->
+
+
+  <!-- Bootstrap for css - end -->
 
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script type="text/javascript" src="/scripts/app.js"></script>
@@ -24,61 +31,51 @@
   </nav>
 
   <!-- Page-specific (main) content here -->
-  <main class="container">
-      <!-- <h2> What are you humming about?</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p> -->
+  <main class="container page-body">
+    <ul class="list-group container" id="menuitems"><li class="list-group-item menu-item row">
+   <div class="pull-left text-center col-md-3 item-image">
+     <img id="item-image" src="https://github.com/BipulChau/midterm_project/blob/master/public/images/espresso.jpg?raw=true" class="img-reponsive img-rounded img-menu">
+     <p>Price: $<span id="item-price">2.5</span></p>
+   </div>
+   <div class="col-md-6 item-description" id="item-description">very dark in flavor with a hint of caramel</div>
 
-    <section class="new-tweet">
-      <!-- <h2>Compose Tweet</h2> -->
-      <!-- <form method="POST", action="/tweets/"> -->
-        <span id="charOverLimit">Oops! You've typed more than 140 characters!</span>
-        <span id="emptyTweet">Oops! It's an empty tweet!</span>
-      <form id="new-tweet-form">
-        <label for="tweet-text">What are you humming about?</label>
-        <textarea name="text" id="tweet-text" ></textarea>
-        <div class="justTwitIt">
-          <button type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
-        </div>
-      </form>
+   <div class="pull-right col-md-3 item-quantity">
+     <input type="number" min="0" id="1">
+   </div>
+ </li><li class="list-group-item menu-item row">
+   <div class="pull-left text-center col-md-3 item-image">
+     <img id="item-image" src="https://github.com/BipulChau/midterm_project/blob/master/public/images/iced-coffee.jpg?raw=true" class="img-reponsive img-rounded img-menu">
+     <p>Price: $<span id="item-price">5.5</span></p>
+   </div>
+   <div class="col-md-6 item-description" id="item-description">Handcrafted daily, made with a custom blend of cold-brewed coffee and 2% milk, sweetened with pure cane sugar and served over ice.</div>
 
-    <section class="tweetContainer">
+   <div class="pull-right col-md-3 item-quantity">
+     <input type="number" min="0" id="2">
+   </div>
+ </li><li class="list-group-item menu-item row">
+   <div class="pull-left text-center col-md-3 item-image">
+     <img id="item-image" src="https://github.com/BipulChau/midterm_project/blob/master/public/images/latte.jpeg?raw=true" class="img-reponsive img-rounded img-menu">
+     <p>Price: $<span id="item-price">5</span></p>
+   </div>
+   <div class="col-md-6 item-description" id="item-description">Lots of steamed milk with espresso shots to liven it up, usually topped with about 1/2 inch or so of foam.</div>
 
-      <article class="old-Tweet">
-        <header>
-          <div class="image">
-            <img>
-            <span > </span>
-          </div>
-          <div class="name" >
-            <span><strong></strong></span>
+   <div class="pull-right col-md-3 item-quantity">
+     <input type="number" min="0" id="3">
+   </div>
 
-          </div>
+ </li></ul>
+<div class="row text-center">
+<button class="btn btn-primary" disabled="" type="button" data-bs-toggle="modal" data-bs-target="#confirmOrder" id="orderBtn">
+ Order
+</button>
+</div>
+</div>
+</div>
 
-        </header>
-
-        <div class= "tweet">
-          <p></p>
-           </div>
-
-           <footer>
-            <span></span>
-
-            <div class="tweeticon">
-              <i class="fas fa-flag"></i>
-              <i class="fas fa-retweet"></i>
-              <i class="fas fa-heart"></i>
-            </div>
-
-           </footer>
-
-      </article>
-    </section>
-
-  </main>
+ </main>
 
   <!-- Raman -->
-  <section>
+  <!-- <section>
     <div class="admin">
      <div>
     <h2>Admin Page</h2>
@@ -93,7 +90,7 @@
     <li>Email:</li>
      </ul>
    </div>
-</section>
+</section> -->
 
 <div id="footer">
     <span>About Us</span>
