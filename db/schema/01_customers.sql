@@ -4,5 +4,5 @@ CREATE TABLE customers (
   id SERIAL PRIMARY KEY NOT NULL,
   fullname VARCHAR(255),
   address TEXT,
-  phNumber INT
+  phnumber VARCHAR(25)
 );

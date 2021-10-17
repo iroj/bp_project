@@ -14,16 +14,17 @@ if (!adminRoute) {
         customer: {
           fullname: $("#fullName").val(),
           address: $("#address").val(),
-          phNumber: $("#phNumber").val(),
+          phnumber: $("#phNumber").val(),
         },
         orders: actualOrder,
         total: totalAmount,
-        completed: false
+        completed: false,
       };
-      $.post("/api/order", { orderDetails }, (res) => {
-        console.log(res);
+      $.post("/api/order", orderDetails, (res) => {
+        $("#confirmOrder").modal("hide");
+        $("#orderReceived").toast("show");
+        resetOrders();
       });
-      console.log(orderDetails);
     });
   });
 
@@ -62,6 +63,17 @@ if (!adminRoute) {
   });
 }
 
+var resetOrders = function () {
+  orders = [];
+  actualOrder = [];
+  totalAmount = 0;
+  // $("#menuitems :input").each(() => {
+  //   console.log($(this));
+  //   $(this).val("0");
+  // });
+  // console.log($("#menuitems :input"));
+};
+
 var addOrder = function (el) {
   const selectedItem = orders.findIndex((item) => item.id === parseInt(el.id));
   const selectedmenuItem = menuitems.find(
@@ -90,7 +102,7 @@ var enableOrderButton = function () {
 };
 
 var getOrderDetails = function () {
-   totalAmount = actualOrder.reduce((tot, item) => (tot += item.amount), 0);
+  totalAmount = actualOrder.reduce((tot, item) => (tot += item.amount), 0);
   var container = $("#orderDetails");
   if (actualOrder.length > 0) {
     actualOrder.forEach((element, index) => {
