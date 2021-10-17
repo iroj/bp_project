@@ -1,16 +1,21 @@
 <ul class="list-group">
+  <% menuitems.forEach(function(item) { %>
+
   <li class="list-group-item menu-item">
     <span class="pull-left text-center">
       <img
-        src="http://www.pngall.com/wp-content/uploads/4/Coffee-Cup-PNG.png"
+        src="<%= item.imgLink %>"
         class="img-reponsive img-rounded img-menu"
       />
-      <p>Price: $2.50</p>
+      <p>Price: $<%= item.price %></p>
     </span>
-    <span class="text-center"> Mitho Mitho Tato tato coffee </span>
+    <span class="text-center"> <%= item.description %></span>
 
     <span class="pull-right">
       <input type="number" />
     </span>
   </li>
+  <% }); %>
 </ul>
+
+<button type="button" id="orderNow">Order</button>
