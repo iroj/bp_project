@@ -9,17 +9,17 @@ const express = require("express");
 const router = express.Router();
 
 module.exports = (db) => {
-  router.get("/", (req, res) => {
-    let query = `SELECT * FROM menuitems`;
-    console.log(query);
-    db.query(query)
-      .then((data) => {
-        const menuitems = data.rows;
-        res.json({ menuitems });
-      })
-      .catch((err) => {
-        res.status(500).json({ error: err.message });
-      });
+  router.post("/", (req, res) => {
+    var orderdetails = req.body;
+    // create customer get id
+    // set status as inprogress
+    // create orderdetails using customerid
+    //
+
+
+    console.log(req.body);
+
+    res.json({});
   });
 
   return router;

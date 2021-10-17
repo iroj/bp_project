@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS orderitems CASCADE;
+
+CREATE TABLE orderitems (
+  id SERIAL PRIMARY KEY NOT NULL,
+  menu_id INT REFERENCES menuitems ON DELETE CASCADE,
+  quantity INT
+);
