@@ -56,6 +56,12 @@ app.get("/admin", (req, res) => {
   res.render("index", { admin: true });
 });
 
+app.get("/admin", (req, res) => {
+  res.render("admin");
+});
+
+
+
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
