@@ -9,8 +9,6 @@ const express = require("express");
 const router = express.Router();
 const twilio = require("twilio");
 const TWILIO_DATA = require("../twilio");
-
-console.log(TWILIO_DATA);
 const client = new twilio(TWILIO_DATA.ACCOUNT_SID, TWILIO_DATA.AUTH_TOKEN);
 
 var bodyParser = require("body-parser");
@@ -51,20 +49,19 @@ module.exports = (db) => {
       parseFloat(data.total),
       JSON.stringify(data.orders),
     ];
-    console.log(orderdetailsqueryParams);
     const orderdetailsresponse = await pool.query(
       orderdetail_query_text,
       orderdetailsqueryParams
     );
     // send sms to admin
 
-    // client.messages
-    //   .create({
-    //     body: "Hi Mr. Admin. There is a new order",
-    //     from: TWILIO_DATA.TWILIO_NUMBER,
-    //     to: TWILIO_DATA.ADMIN_NUMBER,
-    //   })
-    //   .then((message) => console.log(message.sid));
+    client.messages
+      .create({
+        body: "Hi Mr. Admin. There is a new order",
+        from: TWILIO_DATA.TWILIO_NUMBER,
+        to: TWILIO_DATA.ADMIN_NUMBER,
+      })
+      .then((message) => console.log(message.sid));
     res.json({
       message: "Order received",
     });
@@ -76,23 +73,50 @@ module.exports = (db) => {
     `;
 
     const response = await pool.query(query_text);
-    console.log(response.rows);
     res.json({
       incompleteOrders: response.rows,
     });
   });
 
-  router.put("/update", async (req, res) => {
-    const query_text = `
-    SELECT * FROM orderdetails WHERE completed is false
+  router.post("/ready", async (req, res) => {
+    //get order detail
+    const orderID = parseInt(req.body.orderId);
+
+    const order_query_text = `
+    SELECT * FROM orderdetails WHERE id=${orderID}
+    `;
+    const order_response = await pool.query(order_query_text);
+    const orderdetail = order_response.rows[0];
+    //get customer details
+
+    const customer_query_text = `
+    SELECT * FROM customers WHERE id=${parseInt(orderdetail.customer_id)}
+    `;
+    const customer_response = await pool.query(customer_query_text);
+    const customerdetail = customer_response.rows[0];
+
+    // update order detail
+    const update_query_text = `
+    UPDATE orderdetails SET completed=true WHERE id=${orderID}
     `;
 
-    const response = await pool.query(query_text);
+    const update_response = await pool.query(update_query_text);
+    const updatedorderdetails = update_response.rows[0];
+    // send sms to customer
 
-
-
+    client.messages
+      .create({
+        body: `Hi ${customerdetail.fullname} :). 
+        Your order is ready for pick up. 
+          -Coffee Shop`,
+        from: TWILIO_DATA.TWILIO_NUMBER,
+        to: customerdetail.phnumber,
+      })
+      .then(
+        (message) => console.log(message.sid),
+        err => console.log(err));
     res.json({
-      incompleteOrders: response.rows,
+      updated: true
     });
   });
 

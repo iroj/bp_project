@@ -26,8 +26,11 @@ if (!adminRoute) {
         resetOrders();
       });
     });
+    getMenuItems();
   });
 
+}
+var getMenuItems = function () {
   $.get("/api/menuitems", function (data) {
     menuitems = data.menuitems;
     orders = menuitems.map((item) => {
@@ -60,18 +63,17 @@ if (!adminRoute) {
     orderinputs.on("change", function () {
       addOrder(this);
     });
+    enableOrderButton();
   });
 }
-
 var resetOrders = function () {
   orders = [];
   actualOrder = [];
   totalAmount = 0;
-  // $("#menuitems :input").each(() => {
-  //   console.log($(this));
-  //   $(this).val("0");
-  // });
-  // console.log($("#menuitems :input"));
+  $("#menuitems").empty();
+  $("#userForm")[0].reset();
+
+  getMenuItems();
 };
 
 var addOrder = function (el) {
@@ -104,6 +106,7 @@ var enableOrderButton = function () {
 var getOrderDetails = function () {
   totalAmount = actualOrder.reduce((tot, item) => (tot += item.amount), 0);
   var container = $("#orderDetails");
+  container.empty();
   if (actualOrder.length > 0) {
     actualOrder.forEach((element, index) => {
       container.append(`<li class="list-group-item menu-item row">
