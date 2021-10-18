@@ -1,0 +1,71 @@
+.menu-item {
+  display: flex !important;
+  justify-content: space-around;
+}
+.img-menu {
+  width: 120px;
+}
+
+.item-image {
+  width: 33%;
+}
+
+.item-description {
+  width: 66%;
+}
+
+.item-quantity {
+  max-width: 33%;
+}
+
+.item-quantity input {
+  width: 70px;
+  text-align: center;
+}
+
+.navbar {
+  background-color: #fcd66b;
+  height: 100px;
+}
+.page-body {
+  margin-top: 100px;
+  padding: 10px;
+}
+#login {
+  cursor: pointer;
+  height: 100%;
+  align-items: center;
+  float: right;
+  padding: 10px;
+}
+
+.order-toast {
+  position: absolute;
+  top: 100px;
+  right: 0;
+}
+
+.order-toast .toast-header {
+  background: green !important;
+  color: #fff;
+}
+
+.auth-toast {
+  position: absolute;
+  top: 100px;
+  right: 0;
+}
+
+.auth-toast .toast-header {
+  background: red !important;
+  color: #fff;
+}
+
+.login-form {
+  max-width: 200px;
+  text-align: center;
+}
+
+.login-form .form-group{
+  padding: 20px;
+}
