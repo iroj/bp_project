@@ -27,7 +27,7 @@ var loadAuthenticatedScreen = function () {
 
   $.get("/api/order", function (data) {
     const { incompleteOrders } = data;
-    const orders = incompleteOrders.map((order)=> {
+    const orders = incompleteOrders.map((order) => {
       return {
         ...order,
         orderList: JSON.parse(order.orders)
@@ -53,13 +53,23 @@ var loadAuthenticatedScreen = function () {
             </div>
         </div>
         <div class="row">
-        ${JSON.parse(element.ordersList).forEach(order=>{
-          return `
-          ${order.name}
-          `
-        })}
-        </div>
+          <div class="col-md-12" >
+          <h5>Order Details</h5>
+          <ul id="order-items" class="list-group">
+          </ul>
+            </div>
+        </div
     </li>`);
+
+        var orderItems = $('#order-items');
+        console.log(orderItems);
+        element.orderList.forEach((item, i) => {
+          orderItems.append(`<li class="list-group-item">
+              ${item.name}
+              <span class="badge bg-primary rounded-pill">${item.quantity}</span>
+          </li>`)
+        })
+
       });
     }
   });
