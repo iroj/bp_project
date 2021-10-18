@@ -1,143 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Home Page</title>
 
-<head>
-  <title>Home Page</title>
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/styles.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
 
-  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/styles.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <!-- BOOTSTRAP -->
 
-  <!-- Bootstrap for css - start -->
-  <link
-  href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-  rel="stylesheet"
-  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-  crossorigin="anonymous"
-/>
+    <!-- Latest compiled and minified CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
 
-  <!-- Bootstrap for css - end -->
+    <!-- BOOTSTRAP END -->
 
-  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/customer.js"></script>
+    <script type="text/javascript" src="/scripts/admin.js"></script>
+  </head>
 
-  <!-- BOOTSTRAP -->
+  <body>
+    <!-- <h1>Have fun! 🥔</h1> -->
+    <!-- Madeline -->
 
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css"
-    integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
-
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
-    integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
-    crossorigin="anonymous"></script>
-
-  <!-- BOOTSTRAP END -->
-
-
-  <script type="text/javascript" src="/scripts/app.js"></script>
-</head>
-
-<body>
-  <!-- <h1>Have fun! 🥔</h1> -->
-  <!-- Madeline -->
-  <!-- <nav class="navbar">
-    <img id="logo" src="images/logo.png" alt="Coffee Shop" width="250" height="75">
-    <div>
-      <span id="login">Admin Login</span>
-    </div>
-  </nav> -->
-
-  <nav class="navbar fixed-top navbar-primary">
-    <a class="navbar-brand" href="/">
-      <img
-        id="logo"
-        alt="Coffee Shop"
-        width="250"
-        height="60px"
-        src="https://github.com/BipulChau/midterm_project/blob/master/public/images/logo.png?raw=true"
-        alt="Coffee Shop"
-      />
-    </a>
-    <div class="pull-right">
-      <a id="login" class="nav-item" href="/admin">Admin Login</a>
-    </div>
-  </nav>
-
-
-  <!-- Page-specific (main) content here -->
-  <main class="container page-body">
-    <ul class="list-group container" id="menuitems"><li class="list-group-item menu-item row">
-   <div class="pull-left text-center col-md-3 item-image">
-     <img id="item-image" src="https://github.com/BipulChau/midterm_project/blob/master/public/images/espresso.jpg?raw=true" class="img-reponsive img-rounded img-menu">
-     <p>Espresso  Price: $<span id="item-price">2.5</span></p>
-   </div>
-   <div class="col-md-6 item-description" id="item-description">very dark in flavor with a hint of caramel</div>
-
-   <div class="pull-right col-md-3 item-quantity">
-     <input type="number" min="0" id="1">
-   </div>
- </li><li class="list-group-item menu-item row">
-   <div class="pull-left text-center col-md-3 item-image">
-     <img id="item-image" src="https://github.com/BipulChau/midterm_project/blob/master/public/images/iced-coffee.jpg?raw=true" class="img-reponsive img-rounded img-menu">
-     <p>Iced-Coffee  Price: $<span id="item-price">5.5</span></p>
-   </div>
-   <div class="col-md-6 item-description" id="item-description">Handcrafted daily, made with a custom blend of cold-brewed coffee and 2% milk, sweetened with pure cane sugar and served over ice.</div>
-
-   <div class="pull-right col-md-3 item-quantity">
-     <input type="number" min="0" id="2">
-   </div>
- </li><li class="list-group-item menu-item row">
-   <div class="pull-left text-center col-md-3 item-image">
-     <img id="item-image" src="https://github.com/BipulChau/midterm_project/blob/master/public/images/latte.jpeg?raw=true" class="img-reponsive img-rounded img-menu">
-     <p>Latte  Price: $<span id="item-price">5</span></p>
-   </div>
-   <div class="col-md-6 item-description" id="item-description">Lots of steamed milk with espresso shots to liven it up, usually topped with about 1/2 inch or so of foam.</div>
-
-   <div class="pull-right col-md-3 item-quantity">
-     <input type="number" min="0" id="3">
-   </div>
-
- </li></ul>
-<div class="row text-center">
-<button class="btn btn-primary" disabled="" type="button" data-bs-toggle="modal" data-bs-target="#confirmOrder" id="orderBtn">
- Order
-</button>
-</div>
-</div>
-</div>
-
- </main>
-
-  <!-- Raman -->
-  <!-- <section>
-    <div class="admin">
-     <div>
-    <h2>Admin Page</h2>
-    Order Information is as below</div>
-    <ul>
-    <li>Order Id:</li>
-    <li>Item:</li>
-    <li>Duration:</li>
-    <li>Customer name:</li>
-    <li>Status</li>
-    <li>Phone #</li>
-    <li>Email:</li>
-     </ul>
-   </div>
-</section> -->
-
-<div id="footer">
-    <span>About Us</span>
-    <span>Frequently asked questions</span>
-    <span>Contact Us</span>
-</div>
-</body>
-
+    <%- include('./header.ejs') %>
+    <!-- Page-specific (main) content here -->
+    <main class="container page-body">
+      <%if (admin) { %> <%- include('./admin.ejs') %> <% } else { %> <%-
+      include('./menu.ejs') %> <% } %>
+    </main>
+  </body>
 </html>

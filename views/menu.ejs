@@ -1,5 +1,94 @@
-<ul>
-    <li>MOMO</li>
-    <li>Coffe</li>
-    <li>churot</li>
-</ul>
+<ul class="list-group container" id="menuitems"></ul>
+<div class="row text-center">
+  <button
+    class="btn btn-primary"
+    disabled
+    type="button"
+    data-bs-toggle="modal"
+    data-bs-target="#confirmOrder"
+    id="orderBtn"
+  >
+    Order
+  </button>
+</div>
+
+<div class="modal fade" id="confirmOrder" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+          &times;
+        </button>
+        <h4 class="modal-title">Confirm Order</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <h5>Order Details</h5>
+          <ul id="orderDetails"></ul>
+        </div>
+
+        <h5>Your Information</h5>
+        <form id="userForm" class="text-center" action="javascript:void(0);">
+          <div class="form-group">
+            <input
+              class="form-control"
+              required
+              id="fullName"
+              placeholder="Full Name"
+              type="text"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              required
+              class="form-control"
+              id="address"
+              placeholder="e.g.: 120 King St., M4T4Y6"
+              type="text"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              required
+              class="form-control"
+              type="text"
+              id="phNumber"
+              placeholder="e.g.: 6788768899"
+              type="tel"
+            />
+          </div>
+          <div class="form-group">
+            <button
+              type="submit"
+              class="btn btn-secondary form-control"
+              id="submitOrderBtn"
+            >
+              Confirm
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="toast order-toast"
+  id="orderReceived"
+  role="alert"
+  aria-live="polite"
+  aria-atomic="true"
+  data-delay="10000"
+>
+  <div role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="toast-header">
+          <strong class="mr-auto">Order Received</strong>
+        </div>
+        <div class="toast-body">Thanks for your order.</div>
+      </div>
+    </div>
+  </div>
+</div>

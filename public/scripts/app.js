@@ -1,2 +1,3 @@
 // Client facing scripts here
-var admin;
+var adminRoute = document.URL.includes("admin");
+
