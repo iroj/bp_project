@@ -41,21 +41,27 @@ var getMenuItems = function () {
     });
     var container = $("#menuitems");
     if (menuitems.length > 0) {
-      menuitems.forEach((element) => {
-        container.append(`<li class="list-group-item menu-item row">
-      <div class="pull-left text-center col-md-3 item-image">
-        <img
-          id="item-image"
-          src="${element.imglink}"
-          class="img-reponsive img-rounded img-menu"
-        />
-        <p>Price: $<span id="item-price">${element.price}</span></p>
-      </div>
-      <div class="col-md-6 item-description" id="item-description">${element.description}</div>
+      menuitems.forEach((element, index) => {
+        container.append(`
+        <li class="list-group-item menu-item row">
+          <div class="row">
+          ${index+1}. ${element.name}
+          </div>
+          <div class="row">
+            <div class="pull-left text-center col-md-3 item-image">
+              <img
+                id="item-image"
+                src="${element.imglink}"
+                class="img-reponsive img-rounded img-menu"
+              />
+              <p>Price: $<span id="item-price">${element.price}</span></p>
+            </div>
+            <div class="col-md-6 item-description" id="item-description">${element.description}</div>
 
-      <div class="pull-right col-md-3 item-quantity">
-        <input type="number" min=0 id="${element.id}"/>
-      </div>
+            <div class="pull-right col-md-3 item-quantity">
+              <input type="number" min=0 id="${element.id}"/>
+            </div>
+          </div>
     </li>`);
       });
     }

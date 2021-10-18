@@ -1,6 +1,6 @@
 const ADMIN = {
-  username: "",
-  password: "",
+  username: "admin",
+  password: "password",
 };
 
 let authenticated = false;
